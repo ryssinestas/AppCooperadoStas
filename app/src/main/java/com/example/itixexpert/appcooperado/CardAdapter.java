@@ -5,6 +5,7 @@ import android.support.v7.widget.RecyclerView;
 import android.view.LayoutInflater;
 import android.view.ViewGroup;
 import android.widget.ImageView;
+import android.widget.LinearLayout;
 import android.widget.TextView;
 
 /**
@@ -50,10 +51,11 @@ public class CardAdapter extends RecyclerView.Adapter<CardAdapter.ViewHolder>{
         // - get element from your dataset at this position
         // - replace the contents of the view with that element
 
-        ImageView image = (ImageView)holder.mCardView.getChildAt(0);
+        LinearLayout container = (LinearLayout) holder.mCardView.getChildAt(0);
+        ImageView image = (ImageView) container.getChildAt(0);
         image.setImageResource(R.mipmap.ic_launcher);
 
-        TextView text = (TextView)holder.mCardView.getChildAt(1);
+        TextView text = (TextView) container.getChildAt(1);
         text.setText(mDataset[position]);
     }
 
